@@ -9,11 +9,15 @@ import NotificationsOutlined from "@mui/icons-material/NotificationsOutlined";
 import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import PersonOutlined from "@mui/icons-material/PersonOutline";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link, useNavigate } from "react-router-dom";
+import { ROUTES } from "../../constants";
 
 function Topbar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+
+  const navigate = useNavigate();
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -32,15 +36,15 @@ function Topbar() {
             <LightModeOutlined />
           )}
         </IconButton>
-        <IconButton>
+        {/* <IconButton>
           <NotificationsOutlined />
-        </IconButton>
-        <IconButton>
+        </IconButton> */}
+        <IconButton onClick={() => navigate(ROUTES.SETTINGS)}>
           <SettingsOutlined />
         </IconButton>
-        <IconButton>
+        {/* <IconButton>
           <PersonOutlined />
-        </IconButton>
+        </IconButton> */}
       </Box>
     </Box>
   );

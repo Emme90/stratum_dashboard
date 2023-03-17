@@ -15,7 +15,10 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
+import { ROUTES } from "../../constants";
 // import "react-pro-sidebar/dist/styles/"
 
 function Item({ title, to, icon, selected, setSelected }) {
@@ -25,7 +28,9 @@ function Item({ title, to, icon, selected, setSelected }) {
   return (
     <MenuItem
       active={selected === title}
-      style={{ color: colors.grey[100] }}
+      style={{
+        color: selected === title ? "#868dfb" : colors.grey[100],
+      }}
       onClick={() => setSelected(title)}
       icon={icon}
       component={<Link to={to} />}
@@ -82,17 +87,17 @@ function MySidebar() {
               alignItems={"center"}
               ml={"15px"}
             >
-              <Typography variant="h3" color={colors.grey[100]}>
-                ADMIN
+              <Typography variant="h4" color={colors.grey[100]}>
+                MINING PROXIES
               </Typography>
               <IconButton onClick={collapseSidebar}>
-                <MenuOutlinedIcon />
+                {collapsed ? <ArrowBackOutlinedIcon /> : <MenuOutlinedIcon />}
               </IconButton>
             </Box>
           )}
         </MenuItem>
         {/* USER */}
-        {!collapsed && (
+        {/* {!collapsed && (
           <Box mb={"25px"}>
             <Box
               display={"flex"}
@@ -121,13 +126,13 @@ function MySidebar() {
               </Typography>
             </Box>
           </Box>
-        )}
+        )} */}
 
         {/* MENU ITEMS */}
         <Box paddingLeft={collapsed ? undefined : "10%"}>
           <Item
             title={"Dashboard"}
-            to={"/"}
+            to={ROUTES.ROOT}
             icon={<HomeOutlinedIcon />}
             selected={selected}
             setSelected={setSelected}
@@ -139,6 +144,13 @@ function MySidebar() {
           >
             Data
           </Typography>
+          <Item
+            title={"Miners"}
+            to={ROUTES.MINERS}
+            icon={<StorageOutlinedIcon />}
+            selected={selected}
+            setSelected={setSelected}
+          />
           <Item
             title={"Manage Team"}
             to={"/team"}
