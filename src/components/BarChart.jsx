@@ -1,7 +1,8 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
-import { tokens } from "../theme";
+import React from "react";
 import { mockBarData as data } from "../data/mockData";
+import { tokens } from "../theme";
 
 const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
@@ -120,7 +121,7 @@ const BarChart = ({ isDashboard = false }) => {
         },
       ]}
       role="application"
-      barAriaLabel={function (e) {
+      barAriaLabel={function(e) {
         return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
       }}
     />

@@ -1,4 +1,5 @@
 import { Box, useTheme } from "@mui/material";
+import React from "react";
 import GeoChart from "../../components/GeoChart";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";

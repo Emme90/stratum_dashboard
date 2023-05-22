@@ -1,24 +1,26 @@
-import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Topbar from "./scenes/global/Topbar";
-import MySidebar from "./scenes/global/MySidebar";
-import Dashboard from "./scenes/dashboard";
-import Team from "./scenes/team";
-import Invoices from "./scenes/invoices";
-import Contacts from "./scenes/contacts";
-import Bar from "./scenes/bar";
-import Form from "./scenes/form";
-import Line from "./scenes/line";
-import Pie from "./scenes/pie";
-import FAQ from "./scenes/faq";
-import Geography from "./scenes/geography";
-import Calendar from "./scenes/calendar";
-import Miners from "./scenes/miners";
-import Settings from "./scenes/settings";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ROUTES } from "./constants";
+import Bar from "./scenes/bar";
+import Calendar from "./scenes/calendar";
+import Contacts from "./scenes/contacts";
+import Dashboard from "./scenes/dashboard";
+import FAQ from "./scenes/faq";
+import Form from "./scenes/form";
+import Geography from "./scenes/geography";
+import MySidebar from "./scenes/global/MySidebar";
+import Topbar from "./scenes/global/Topbar";
+import Invoices from "./scenes/invoices";
+import Line from "./scenes/line";
+import Miner from "./scenes/miner";
+import Miners from "./scenes/miners";
+import Pie from "./scenes/pie";
+import Settings from "./scenes/settings";
+import Team from "./scenes/team";
+import { ColorModeContext, useMode } from "./theme";
 
-const { ROOT, MINERS, SETTINGS } = ROUTES;
+const { ROOT, MINERS, MINER, SETTINGS } = ROUTES;
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -33,6 +35,7 @@ function App() {
             <Routes>
               <Route path={ROOT} element={<Dashboard />} />
               <Route path={MINERS} element={<Miners />} />
+              <Route path={MINER} element={<Miner />} />
               <Route path={SETTINGS} element={<Settings />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />

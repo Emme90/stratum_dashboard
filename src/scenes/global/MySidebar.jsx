@@ -1,24 +1,14 @@
-import React from "react";
-import { useState } from "react";
-import { Menu, MenuItem, Sidebar, useProSidebar } from "react-pro-sidebar";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
-import { tokens } from "../../theme";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutline";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import React, { useState } from "react";
+import { Menu, MenuItem, Sidebar, useProSidebar } from "react-pro-sidebar";
+import { Link } from "react-router-dom";
 import { ROUTES } from "../../constants";
+import { tokens } from "../../theme";
 // import "react-pro-sidebar/dist/styles/"
 
 function Item({ title, to, icon, selected, setSelected }) {
@@ -137,13 +127,13 @@ function MySidebar() {
             selected={selected}
             setSelected={setSelected}
           />
-          <Typography
+          {/* <Typography
             variant="h6"
             color={colors.grey[300]}
             sx={{ m: "15px 0 5px 20px" }}
           >
             Data
-          </Typography>
+          </Typography> */}
           <Item
             title={"Miners"}
             to={ROUTES.MINERS}
@@ -151,7 +141,7 @@ function MySidebar() {
             selected={selected}
             setSelected={setSelected}
           />
-          <Item
+          {/* <Item
             title={"Manage Team"}
             to={"/team"}
             icon={<PeopleOutlinedIcon />}
@@ -171,15 +161,15 @@ function MySidebar() {
             icon={<ReceiptOutlinedIcon />}
             selected={selected}
             setSelected={setSelected}
-          />
-          <Typography
+          /> */}
+          {/* <Typography
             variant="h6"
             color={colors.grey[300]}
             sx={{ m: "15px 0 5px 20px" }}
           >
             Pages
-          </Typography>
-          <Item
+          </Typography> */}
+          {/* <Item
             title={"Profile Form"}
             to={"/form"}
             icon={<PersonOutlinedIcon />}
@@ -192,7 +182,7 @@ function MySidebar() {
             icon={<CalendarTodayOutlinedIcon />}
             selected={selected}
             setSelected={setSelected}
-          />
+          /> */}
           <Item
             title={"FAQ Page"}
             to={"/faq"}
@@ -200,7 +190,7 @@ function MySidebar() {
             selected={selected}
             setSelected={setSelected}
           />
-          <Typography
+          {/* <Typography
             variant="h6"
             color={colors.grey[300]}
             sx={{ m: "15px 0 5px 20px" }}
@@ -234,7 +224,7 @@ function MySidebar() {
             icon={<MapOutlinedIcon />}
             selected={selected}
             setSelected={setSelected}
-          />
+          /> */}
         </Box>
       </Menu>
     </Sidebar>
